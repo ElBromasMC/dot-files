@@ -1,0 +1,17 @@
+{
+    "editor.fontFamily": "'JetBrains Mono'",
+    "terminal.integrated.fontFamily": "'JetBrains Mono'",
+    "editor.formatOnSave": true,
+    "gopls": {
+        "ui.semanticTokens": true
+    },
+    "[templ]": {
+        "editor.defaultFormatter": "a-h.templ"
+    },
+    "tailwindCSS.includeLanguages": {
+        "templ": "html"
+    },
+    "emmet.includeLanguages": {
+        "templ": "html"
+    },
+}
