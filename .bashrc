@@ -14,7 +14,7 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-PATH="${PATH}:/home/ander/.local/bin"
+PATH="${PATH}:/home/ander/.local/bin:/home/ander/go/bin:/home/ander/.cargo/bin:/usr/local/texlive/2024/bin/aarch64-linux"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
