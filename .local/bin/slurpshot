@@ -3,7 +3,7 @@
 # Simple screenshot script, dependencies: grim, bemenu, imv, jq, slurp
 # Choose directory to save screenshots and viewer
 
-SHOTPATH=$HOME
+SHOTPATH=$HOME/Pictures/Screenshots
 VIEWER=/usr/bin/imv-wayland
 
 WINDOWS=`swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.visible and .pid) | "\(.app_id) \(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"'`
@@ -41,6 +41,7 @@ else
     grim -g "$(eval echo $GRID)" "$FILENAME"
 fi
 
+wl-copy < "$FILENAME"
 
 WAHL=`bemenu -n -m all -b -H 11 --tf=#ffffff --ff=#ffffff --hf=#4c7899 --fb=#000000 --tb=#000000 --nb=#000000 --hb=#000000 -p "Screenshot taken" << EOF
 View

@@ -14,12 +14,18 @@ if [[ $- != *i* ]] ; then
 	return
 fi
 
-PATH="${PATH}:/home/ander/.local/bin:/home/ander/go/bin:/home/ander/.cargo/bin:/usr/local/texlive/2024/bin/aarch64-linux"
+# Set a custom PATH by modifying the default one. However, keep a
+# copy of the default one in order to not keep prefixing it when
+# nesting shells etc.
+[ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
+export PATH="${HOME}/.local/bin:${HOME}/go/bin:${HOME}/.cargo/bin:$MASTERPATH"
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias lc='loginctl'
 
-# Put your fun stuff here.
+# Start Sway on tty1
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+	export ELECTRON_OZONE_PLATFORM_HINT=wayland
 	export XDG_CURRENT_DESKTOP=sway
 	dbus-run-session sway
 fi
