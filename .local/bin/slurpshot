@@ -4,7 +4,7 @@
 # Choose directory to save screenshots and viewer
 
 SHOTPATH=$HOME/Pictures/Screenshots
-VIEWER=/usr/bin/imv-wayland
+VIEWER=/usr/bin/imv
 
 WINDOWS=`swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.visible and .pid) | "\(.app_id) \(.rect.x),\(.rect.y) \(.rect.width)x\(.rect.height)"'`
 FOCUSED=`swaymsg -t get_tree | jq '.. | (.nodes? // empty)[] | select(.focused and .pid) | .rect | "\(.x),\(.y) \(.width)x\(.height)"'`
@@ -41,7 +41,8 @@ else
     grim -g "$(eval echo $GRID)" "$FILENAME"
 fi
 
-wl-copy < "$FILENAME"
+# Copy to clipboard
+wl-copy --type "image/png" < "$FILENAME"
 
 WAHL=`bemenu -n -m all -b -H 11 --tf=#ffffff --ff=#ffffff --hf=#4c7899 --fb=#000000 --tb=#000000 --nb=#000000 --hb=#000000 -p "Screenshot taken" << EOF
 View
