@@ -37,7 +37,7 @@ exec gentoo-pipewire-launcher restart &
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
-output HDMI-A-1 resolution 1920x1080@144.001Hz
+# output HDMI-A-1 resolution 1920x1080@144.001Hz
 
 ## Idle configuration
 
@@ -76,7 +76,7 @@ exec swayidle -w \
 
 input type:keyboard {
 	xkb_layout us,latam
-	xkb_options grp:win_space_toggle
+	xkb_options grp:rctrl_toggle
 }
 
 ## Key bindings

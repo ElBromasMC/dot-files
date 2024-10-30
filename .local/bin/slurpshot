@@ -1,7 +1,6 @@
 #!/bin/bash
 # Thanks (https://github.com/de-arl/slurpshot)
-# Simple screenshot script, dependencies: grim, bemenu, imv, jq, slurp
-# Choose directory to save screenshots and viewer
+# Simple screenshot script, dependencies: sway, bemenu, grim, slurp, jq, wl-clipboard, imv
 
 SHOTPATH=$HOME/Pictures/Screenshots
 VIEWER=/usr/bin/imv

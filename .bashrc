@@ -20,13 +20,14 @@ fi
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
 export PATH="${HOME}/.local/bin:${HOME}/go/bin:${HOME}/.cargo/bin:$MASTERPATH"
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias lc='loginctl'
-
 # Start Sway on tty1
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	export ELECTRON_OZONE_PLATFORM_HINT=wayland
 	export XDG_CURRENT_DESKTOP=sway
 	dbus-run-session sway
 fi
+
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias lc='loginctl'
+alias open='xdg-open'
 
