@@ -27,6 +27,8 @@ if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	dbus-run-session sway
 fi
 
+export TERM=xterm-256color
+
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias lc='loginctl'
 alias open='xdg-open'

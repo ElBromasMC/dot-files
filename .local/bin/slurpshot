@@ -24,6 +24,9 @@ GRID=\"$(echo $CHOICE | awk ' {print $2,$3} ')
 # Name printed when viewing screenshot, adjust if you edit FILENAME
 FILENAME_SHORT=${FILENAME: -32}
 
+# Create directory if not exists
+mkdir -p $SHOTPATH
+
 if [ "$CHOICE" = Fullscreen ]
 then
     grim "$FILENAME"
