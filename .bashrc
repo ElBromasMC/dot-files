@@ -18,7 +18,7 @@ fi
 # copy of the default one in order to not keep prefixing it when
 # nesting shells etc.
 [ -z "$MASTERPATH" ] && export MASTERPATH="$PATH"
-export PATH="${HOME}/.local/bin:${HOME}/go/bin:${HOME}/.cargo/bin:$MASTERPATH"
+export PATH="${HOME}/.local/bin:${HOME}/go/bin:${HOME}/.cargo/bin:/var/lib/flatpak/exports/bin:$MASTERPATH"
 
 # Start Sway on tty1
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
