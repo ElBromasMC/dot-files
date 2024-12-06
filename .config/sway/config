@@ -35,10 +35,11 @@ exec gentoo-pipewire-launcher restart &
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 #
 
+### Set background image
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
+### Personal monitor
 output HDMI-A-1 resolution 1920x1080@144.001Hz
-output eDP-1 disable
 
 ## Idle configuration
 
@@ -90,6 +91,9 @@ bindsym Print exec slurpshot
 ### For sound volume
 bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-
+
+### For eDP-1 (laptop screen) toggle
+bindsym $mod+Shift+m exec swaymsg 'output eDP-1 toggle'
 
 ### For screen brightness
 #
